@@ -6,4 +6,29 @@
     android:layout_height="match_parent"
     tools:context="SplashScreen.SplashActivity">
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/D_checker"
+        android:textSize="38sp"
+        app:layout_constraintBottom_toTopOf="@id/circle"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginBottom="40dp"
+        android:id="@+id/checker"
+        android:textStyle="bold||italic"
+        android:textColor="#0E16B8"/>
+
+    <ImageView
+        android:layout_width="110dp"
+        android:id="@+id/circle"
+        android:layout_height="110dp"
+        android:src="@drawable/circle"
+        app:layout_constraintTop_toBottomOf="@id/checker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
