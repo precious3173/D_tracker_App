@@ -19,8 +19,8 @@
         app:layout_constraintVertical_chainStyle="packed"
         android:layout_marginBottom="40dp"
         android:id="@+id/checker"
-        android:textStyle="bold||italic"
-        android:textColor="#0E16B8"/>
+        android:textStyle="bold"
+        android:textColor="#0C1274"/>
 
     <ImageView
         android:layout_width="110dp"
@@ -31,4 +31,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:id="@+id/beverage"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_baseline_emoji_food_beverage_24"
+        app:layout_constraintTop_toTopOf="@id/circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
