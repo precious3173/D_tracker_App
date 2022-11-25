@@ -13,4 +13,12 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.SearchView" parent="Widget.AppCompat.Light.SearchView">
+
+        <item name="android:queryHint">#515151</item>
+        <item name="android:editTextColor">#222020</item>
+        <item name="android:textColorHint">#515151</item>
+
+    </style>
 </resources>
