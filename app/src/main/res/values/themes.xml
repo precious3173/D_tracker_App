@@ -14,11 +14,13 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.SearchView" parent="Widget.AppCompat.Light.SearchView">
+    <style name="Theme.SearchView" parent="Widget.AppCompat.SearchView.ActionBar">
 
-        <item name="android:queryHint">#515151</item>
         <item name="android:editTextColor">#222020</item>
-        <item name="android:textColorHint">#515151</item>
+        <item name="android:textColorHint">#797575</item>
+        <item name="background">@color/white</item>
+
+
 
     </style>
 </resources>

@@ -9,19 +9,20 @@
     android:orientation="vertical">
 
 
-    <androidx.appcompat.widget.SearchView
+    <SearchView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:queryHint="Search Country"
+        android:background="@color/white"
         android:theme="@style/Theme.SearchView"
         android:id="@+id/searchview"
+        android:iconifiedByDefault="false"
         app:layout_constraintBottom_toTopOf="@id/recyclerview"
         />
 
@@ -33,6 +34,7 @@
         android:id="@+id/recyclerview"
         app:layout_constraintTop_toBottomOf="@id/searchview"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/countries"/>
+        tools:listitem="@layout/countries"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
 </LinearLayout>
