@@ -4,10 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.dtrackerapp.R
-import com.example.dtrackerapp.TrackerActivity
+import UserInterface.TrackerActivity
 import kotlinx.coroutines.*
-import java.util.Timer
-import kotlin.concurrent.timerTask
 
 class SplashActivity : AppCompatActivity() {
 

@@ -1,40 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ListofCountries"
+    tools:context="UserInterface.ListofCountries"
     android:background="#D5CEC1"
     android:orientation="vertical">
 
 
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:queryHint="Search Country"
-        android:background="@color/white"
-        android:theme="@style/Theme.SearchView"
-        android:id="@+id/searchview"
-        android:iconifiedByDefault="false"
-        app:layout_constraintBottom_toTopOf="@id/recyclerview"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:id="@+id/recyclerview"
-        app:layout_constraintTop_toBottomOf="@id/searchview"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/countries"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        android:orientation="vertical">
 
-</LinearLayout>
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:queryHint="Search Country"
+            android:background="@color/white"
+            android:theme="@style/Theme.SearchView"
+            android:id="@+id/searchview"
+            android:iconifiedByDefault="false"
+            app:layout_constraintBottom_toTopOf="@id/recyclerview"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/recyclerview"
+            app:layout_constraintTop_toBottomOf="@id/searchview"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:listitem="@layout/countries"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/ic_baseline_emoji_food_beverage_24"
+        android:layout_margin="50dp"
+        android:backgroundTint="@color/white"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

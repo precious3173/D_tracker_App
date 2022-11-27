@@ -2,12 +2,13 @@ package Adapter
 
 import Model.CountryModel
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dtrackerapp.databinding.CountriesBinding
+
 
 class CountryListAdapter: RecyclerView.Adapter<CountryListAdapter.CountryHolder>() {
 
@@ -35,6 +36,7 @@ class CountryListAdapter: RecyclerView.Adapter<CountryListAdapter.CountryHolder>
     override fun getItemCount(): Int = differ.currentList.size
 
 
+
    private val differCallbacks = object:
     DiffUtil.ItemCallback<CountryModel>(){
        override fun areItemsTheSame(oldItem: CountryModel, newItem: CountryModel): Boolean {
@@ -48,4 +50,8 @@ class CountryListAdapter: RecyclerView.Adapter<CountryListAdapter.CountryHolder>
    }
 
     val differ = AsyncListDiffer(this, differCallbacks)
+
+
+
+
 }

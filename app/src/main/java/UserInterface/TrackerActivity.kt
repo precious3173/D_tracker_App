@@ -1,7 +1,8 @@
-package com.example.dtrackerapp
+package UserInterface
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.dtrackerapp.R
 
 class TrackerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
