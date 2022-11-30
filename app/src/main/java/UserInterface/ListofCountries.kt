@@ -1,24 +1,21 @@
 package UserInterface
 
 import Adapter.CountryListAdapter
-import ArrayListofItems.MutableListOfCountries
+import ArrayListofItems.ListofItems
 import Model.CountryModel
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
-import androidx.compose.ui.text.intl.Locale
-import androidx.compose.ui.text.toLowerCase
 import com.example.dtrackerapp.databinding.FragmentListofCountriesBinding
 
 
 class ListofCountries : Fragment() {
 
    lateinit var binding: FragmentListofCountriesBinding
-   val mutableListOfCountries: MutableListOfCountries = MutableListOfCountries()
+   val listofItems: ListofItems = ListofItems()
    val countryModels: CountryModel? = null
     val countryListAdapter = CountryListAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,7 +40,7 @@ class ListofCountries : Fragment() {
 
 
          //to add list of countries
-        countryListAdapter.differ.submitList(mutableListOfCountries.mute())
+        countryListAdapter.differ.submitList(listofItems.mute())
 
                  binding.recyclerview.apply {
 
@@ -74,7 +71,7 @@ class ListofCountries : Fragment() {
 
         val filterCountry = mutableListOf<CountryModel>()
 
-         for (countrys in mutableListOfCountries.mute()) {
+         for (countrys in listofItems.mute()) {
 
 
              if (countrys.country.toLowerCase()
@@ -85,13 +82,13 @@ class ListofCountries : Fragment() {
              }
              if(filterCountry.isNotEmpty()){
 
-                 mutableListOfCountries.mute()
+                 listofItems.mute()
                  countryListAdapter.differ.submitList(filterCountry)
              }
 
              else {
 
-                 mutableListOfCountries.mute().clear()
+                 listofItems.mute().clear()
 
              }
          }

@@ -28,6 +28,17 @@
             app:layout_constraintBottom_toTopOf="@id/recyclerview"
             />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Country Name"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:textSize="30sp"
+            android:textColor="#0C1274"
+            android:textStyle="italic"
+            android:id="@+id/countryName"
+            android:fontFamily="cursive"/>
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
