@@ -9,5 +9,23 @@
         android:id="@+id/listofCountries"
         android:name="UserInterface.ListofCountries"
         android:label="fragment_listof_countries"
-        tools:layout="@layout/fragment_listof_countries" />
+        tools:layout="@layout/fragment_listof_countries" >
+        <action
+            android:id="@+id/action_listofCountries_to_countryFood"
+            app:destination="@id/countryFood" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/countryFood"
+        android:name="UserInterface.CountryFood"
+        android:label="fragment_country_food"
+        tools:layout="@layout/fragment_country_food" >
+        <action
+            android:id="@+id/action_countryFood_to_listofCountries"
+            app:destination="@id/listofCountries" />
+
+        <argument
+            android:name="country"
+            app:argType="Model.CountryModel" />
+    </fragment>
 </navigation>

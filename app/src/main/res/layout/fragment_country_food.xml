@@ -20,7 +20,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:queryHint="Search Country"
+            android:queryHint="Search for Food"
             android:background="@color/white"
             android:theme="@style/Theme.SearchView"
             android:id="@+id/searchview"

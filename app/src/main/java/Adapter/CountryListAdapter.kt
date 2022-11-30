@@ -1,13 +1,20 @@
 package Adapter
 
 import Model.CountryModel
+import Model.FoodModel
+import UserInterface.ListofCountries
+import UserInterface.ListofCountriesDirections
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dtrackerapp.R
 import com.example.dtrackerapp.databinding.CountriesBinding
+import com.example.dtrackerapp.databinding.FragmentListofCountriesBinding
 
 
 class CountryListAdapter: RecyclerView.Adapter<CountryListAdapter.CountryHolder>() {
@@ -17,6 +24,15 @@ class CountryListAdapter: RecyclerView.Adapter<CountryListAdapter.CountryHolder>
 
             binding.apply {
                 country.text = countryModel.country
+
+
+                 country.setOnClickListener {
+
+//                     val bundle: Bundle = Bundle()
+//                     bundle.putString("country", country.toString())
+                   val action = ListofCountriesDirections.actionListofCountriesToCountryFood(countryModel)
+                     Navigation.findNavController(it).navigate(action)
+                 }
             }
 
 
