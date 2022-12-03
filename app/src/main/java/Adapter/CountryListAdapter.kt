@@ -31,6 +31,7 @@ class CountryListAdapter: RecyclerView.Adapter<CountryListAdapter.CountryHolder>
 //                     val bundle: Bundle = Bundle()
 //                     bundle.putString("country", country.toString())
                    val action = ListofCountriesDirections.actionListofCountriesToCountryFood(countryModel)
+
                      Navigation.findNavController(it).navigate(action)
                  }
             }

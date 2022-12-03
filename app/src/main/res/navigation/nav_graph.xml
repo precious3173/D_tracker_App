@@ -23,9 +23,23 @@
         <action
             android:id="@+id/action_countryFood_to_listofCountries"
             app:destination="@id/listofCountries" />
-
         <argument
             android:name="country"
             app:argType="Model.CountryModel" />
+        <action
+            android:id="@+id/action_countryFood_to_foodDetails"
+            app:destination="@id/foodDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDetails"
+        android:name="UserInterface.FoodDetails"
+        android:label="fragment_food_details"
+        tools:layout="@layout/fragment_food_details" >
+        <action
+            android:id="@+id/action_foodDetails_to_countryFood"
+            app:destination="@id/countryFood" />
+        <argument
+            android:name="food"
+            app:argType="Model.FoodModel" />
     </fragment>
 </navigation>

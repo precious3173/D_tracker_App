@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="UserInterface.FoodDetails"
+    android:background="#D5CEC1"
+    android:orientation="vertical"
+    android:layout_margin="10dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calorific Value of Food"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FoodName"
+        android:textColor="#0C1274"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:id="@+id/foodName"
+        android:fontFamily="serif-monospace"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"/>
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:id="@+id/foodImage"
+        android:src="@drawable/ic_baseline_emoji_food_beverage_24"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rice is the best food in Africa"
+        android:textColor="@color/black"
+        android:id="@+id/foodDetail"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"/>
+</LinearLayout>

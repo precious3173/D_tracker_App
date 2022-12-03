@@ -1,13 +1,16 @@
 package Adapter
 
 import Model.FoodModel
+import UserInterface.CountryFoodDirections
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dtrackerapp.databinding.FoodLayoutBinding
+import com.example.dtrackerapp.databinding.FragmentFoodDetailsBinding
 import java.util.Objects
 
 class FoodAdapter: RecyclerView.Adapter<FoodAdapter.FoodHolder>() {
@@ -20,6 +23,13 @@ class FoodAdapter: RecyclerView.Adapter<FoodAdapter.FoodHolder>() {
 
                foodImage.setImageResource(foodModel.foodImage)
                  food.text = foodModel.food
+
+                binding.foodImage.setOnClickListener {
+
+                 val action = CountryFoodDirections.actionCountryFoodToFoodDetails(foodModel)
+
+                    Navigation.findNavController(it).navigate(action)
+                }
             }
         }
     }

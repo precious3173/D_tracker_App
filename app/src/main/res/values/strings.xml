@@ -3,4 +3,31 @@
     <string name="D_checker">D Checker</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string name="Rice">There are over 53 grams of carbohydrate in a single serving of white rice.
+     Only a tiny amount of that carbohydrate comes from fiber. Most of it is starch and a small
+     amount is sugar.The glycemic index of white rice is estimated to be 73.The glycemic index
+     of brown rice, on the other hand, is estimated to be about 68. Short-grain rice tends to have
+     a higher glycemic index than long-grain, medium-grain, and brown rice."</string>
+
+    <string name="Beans">
+        Nutritional profiles differ from one bean to the next. However, as an example, 1 cup (171 gram) of boiled pinto beans offers (2Trusted Source):
+        Protein: 15 grams,Fat: 1 gram, Carbs: 45 grams, Fiber: 15 grams, Iron: 20% of the Daily Value (DV), Calcium: 8% of the DV,Magnesium: 21% of the DV,Phosphorous: 25% of the DV,Potassium: 21% of the DV
+Folate: 74% of the DV.Beans also contain decent amounts of zinc, copper, manganese, selenium, and vitamins B1, B6, E, and K.With only 245 calories per cup (171 grams), pinto beans are one of the most nutrient-dense foods around. The favorite choice for the term "Beans" is 1/2 cup ofGreen Snap Beans which has about
+        17 calories</string>
+
+    <string name="Plantain">Plantains are rich sources of complex carbohydrates, vitamins, and minerals, and are easily digestible. As a staple food, plantains have been the main fare of millions of people for centuries.
+
+Here are the basic nutrition factsTrusted Source for one cup of baked yellow plantains (139 grams), according to the United States Department of Agriculture (USDA). Nutrition will vary on cooking style.
+
+Calories	215
+Fat	0.22 g
+Protein	2 g
+Carbohydrates	58 g
+Fiber	3 g
+Potassium	663 mg
+Vitamin C	23 mg
+Vitamin A	63 ug
+Vitamin B-6	0.29 mg
+Magnesium	57 mg</string>
 </resources>
