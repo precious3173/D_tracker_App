@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import androidx.navigation.fragment.findNavController
+import com.example.dtrackerapp.R
 import com.example.dtrackerapp.databinding.FragmentListofCountriesBinding
 
 
@@ -37,6 +39,11 @@ class ListofCountries : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        binding.next.setOnClickListener {
+
+            findNavController().navigate(R.id.action_listofCountries_to_mealsTracker)
+        }
 
 
          //to add list of countries

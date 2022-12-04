@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="UserInterface.CountryFood"
+    tools:context="UserInterface.MealsTracker"
     android:background="#D5CEC1">
 
     <LinearLayout
@@ -11,34 +11,17 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <SearchView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:queryHint="Search for Food"
-            android:background="@color/white"
-            android:theme="@style/Theme.SearchView"
-            android:id="@+id/searchview"
-            android:iconifiedByDefault="false"
-            app:layout_constraintBottom_toTopOf="@id/recyclerview"
-            />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Country Name"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:text="My Daily Routine"
+            android:textColor="@color/black"
             android:textSize="30sp"
-            android:textColor="#0C1274"
-            android:textStyle="italic"
-            android:id="@+id/countryName"
-            android:fontFamily="cursive"/>
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"/>
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -47,15 +30,13 @@
             android:id="@+id/recyclerview"
             app:layout_constraintTop_toBottomOf="@id/searchview"
             app:layout_constraintStart_toStartOf="parent"
-            tools:listitem="@layout/food_layout"
-            app:spanCount="2"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+            tools:listitem="@layout/countries"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:src="@drawable/ic_baseline_emoji_food_beverage_24"
@@ -63,8 +44,5 @@
         android:backgroundTint="@color/white"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-       />
-
-
-
+        />
 </RelativeLayout>

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_listofCountries_to_countryFood"
             app:destination="@id/countryFood" />
+        <action
+            android:id="@+id/action_listofCountries_to_mealsTracker"
+            app:destination="@id/mealsTracker" />
 
     </fragment>
     <fragment
@@ -29,6 +32,9 @@
         <action
             android:id="@+id/action_countryFood_to_foodDetails"
             app:destination="@id/foodDetails" />
+        <action
+            android:id="@+id/action_countryFood_to_mealsTracker"
+            app:destination="@id/mealsTracker" />
     </fragment>
     <fragment
         android:id="@+id/foodDetails"
@@ -42,4 +48,9 @@
             android:name="food"
             app:argType="Model.FoodModel" />
     </fragment>
+    <fragment
+        android:id="@+id/mealsTracker"
+        android:name="UserInterface.MealsTracker"
+        android:label="fragment_meals_tracker"
+        tools:layout="@layout/fragment_meals_tracker" />
 </navigation>
