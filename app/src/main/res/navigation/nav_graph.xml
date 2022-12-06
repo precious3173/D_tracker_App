@@ -52,5 +52,14 @@
         android:id="@+id/mealsTracker"
         android:name="UserInterface.MealsTracker"
         android:label="fragment_meals_tracker"
-        tools:layout="@layout/fragment_meals_tracker" />
+        tools:layout="@layout/fragment_meals_tracker" >
+        <action
+            android:id="@+id/action_mealsTracker_to_dietSchedule"
+            app:destination="@id/dietSchedule" />
+    </fragment>
+    <fragment
+        android:id="@+id/dietSchedule"
+        android:name="UserInterface.DietSchedule"
+        android:label="fragment_diet_schedule"
+        tools:layout="@layout/fragment_diet_schedule" />
 </navigation>

@@ -1,0 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="UserInterface.DietSchedule"
+    android:background="#D5CEC1"
+    >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/black"
+        android:id="@+id/mealtext"
+        android:textSize="16sp"
+        android:layout_margin="20dp"
+        />
+
+</FrameLayout>
