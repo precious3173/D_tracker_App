@@ -1,23 +1,26 @@
 package Repository
 
 import Database.FoodDao
+import Database.FoodDatabase
 import Database.FoodEntity
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class FoodRepository: FoodDao {
+class FoodRepository @Inject constructor(private val foodDatabase: FoodDatabase): FoodDao {
     override suspend fun InsertFood(foodEntity: FoodEntity) {
-        TODO("Not yet implemented")
+
+        foodDatabase.foodDao().InsertFood(foodEntity)
     }
 
     override suspend fun UpdateFood(foodEntity: FoodEntity) {
-        TODO("Not yet implemented")
+        foodDatabase.foodDao().UpdateFood(foodEntity)
     }
 
     override suspend fun DeleteFood(foodEntity: FoodEntity) {
-        TODO("Not yet implemented")
+        foodDatabase.foodDao().DeleteFood(foodEntity)
     }
 
     override fun getFood(): Flow<List<FoodEntity>> {
-        TODO("Not yet implemented")
+        return foodDatabase.foodDao().getFood()
     }
 }
