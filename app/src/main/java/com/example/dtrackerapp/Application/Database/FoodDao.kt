@@ -1,4 +1,4 @@
-package Database
+package com.example.dtrackerapp.Application.Database
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -20,6 +20,6 @@ interface FoodDao {
     @Delete
     suspend fun DeleteFood(foodEntity: FoodEntity)
 
-    @Query("SELECT*FROM foodentity")
+    @Query("SELECT *FROM foodentity")
     fun getFood(): Flow<List<FoodEntity>>
 }

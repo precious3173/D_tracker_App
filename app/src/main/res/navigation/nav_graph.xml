@@ -28,7 +28,7 @@
             app:destination="@id/listofCountries" />
         <argument
             android:name="country"
-            app:argType="Model.CountryModel" />
+            app:argType="com.example.dtrackerapp.Application.Model.CountryModel" />
         <action
             android:id="@+id/action_countryFood_to_foodDetails"
             app:destination="@id/foodDetails" />
@@ -46,7 +46,7 @@
             app:destination="@id/countryFood" />
         <argument
             android:name="food"
-            app:argType="Model.FoodModel" />
+            app:argType="com.example.dtrackerapp.Application.Model.FoodModel" />
     </fragment>
     <fragment
         android:id="@+id/mealsTracker"

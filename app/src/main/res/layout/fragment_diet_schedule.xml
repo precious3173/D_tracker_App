@@ -11,6 +11,11 @@
         android:layout_height="match_parent"
         android:textColor="@color/black"
         android:id="@+id/mealtext"
+        android:gravity="start"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:hint="Schedule your diet"
         android:textSize="16sp"
         android:layout_margin="20dp"
         />

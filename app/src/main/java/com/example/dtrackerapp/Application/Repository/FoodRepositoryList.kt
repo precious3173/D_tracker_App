@@ -1,12 +1,12 @@
-package Repository
+package com.example.dtrackerapp.Application.Repository
 
-import Database.FoodDao
-import Database.FoodDatabase
-import Database.FoodEntity
+import com.example.dtrackerapp.Application.Database.FoodDatabase
+import com.example.dtrackerapp.Application.Database.FoodEntity
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class FoodRepository @Inject constructor(private val foodDatabase: FoodDatabase): FoodDao {
+class FoodRepositoryList @Inject constructor(private val foodDatabase: FoodDatabase):
+    FoodRepository {
     override suspend fun InsertFood(foodEntity: FoodEntity) {
 
         foodDatabase.foodDao().InsertFood(foodEntity)

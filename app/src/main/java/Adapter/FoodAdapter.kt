@@ -1,6 +1,6 @@
 package Adapter
 
-import Model.FoodModel
+import com.example.dtrackerapp.Application.Model.FoodModel
 import UserInterface.CountryFoodDirections
 import android.view.LayoutInflater
 import android.view.View

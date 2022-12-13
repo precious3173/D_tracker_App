@@ -2,7 +2,7 @@ package UserInterface
 
 import Adapter.CountryListAdapter
 import ArrayListofItems.ListofItems
-import Model.CountryModel
+import com.example.dtrackerapp.Application.Model.CountryModel
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package Model
+package com.example.dtrackerapp.Application.Model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

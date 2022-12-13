@@ -1,7 +1,7 @@
 package Adapter
 
-import Model.CountryModel
-import Model.FoodModel
+import com.example.dtrackerapp.Application.Model.CountryModel
+import com.example.dtrackerapp.Application.Model.FoodModel
 import UserInterface.ListofCountries
 import UserInterface.ListofCountriesDirections
 import android.os.Bundle

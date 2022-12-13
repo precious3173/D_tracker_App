@@ -1,43 +1,94 @@
 package Adapter
 
-import Database.FoodEntity
+import UserInterface.DeleteDialog
+import android.app.AlertDialog
+import android.content.Context
+import com.example.dtrackerapp.Application.Database.FoodEntity
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.dtrackerapp.databinding.CountriesBinding
-import com.example.dtrackerapp.databinding.FragmentDietScheduleBinding
+import com.example.dtrackerapp.databinding.SchedulesBinding
 
-class DiaryScheduleAdapter: RecyclerView.Adapter<DiaryScheduleAdapter.Schedule>() {
+class DiaryScheduleAdapter(delete: deleteSchedule): RecyclerView.Adapter<DiaryScheduleAdapter.Schedule>() {
 
 
-    class Schedule (val binding: CountriesBinding): RecyclerView.ViewHolder(binding.root) {
+   // private var deleteSchedules: deleteSchedule = deleteSchedules
+   interface deleteSchedule{
 
-        fun bind(foodEntity: FoodEntity){
-
-            binding.apply {
-                country.text = foodEntity.text
-
-            }
-        }
+        fun deleteSchedules(foodEntity: FoodEntity)
     }
+        var delete: deleteSchedule? = null
+        init {
+
+            this.delete = delete
+        }
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Schedule {
-        val binding = CountriesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = SchedulesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
         return Schedule(binding)
     }
 
     override fun onBindViewHolder(holder: Schedule, position: Int) {
 
-        holder.bind(differ.currentList[position])
+        delete?.let { holder.bind(differ.currentList[position], it) }
 
     }
 
     override fun getItemCount(): Int = differ.currentList.size
 
 
+    class Schedule (val binding: SchedulesBinding): RecyclerView.ViewHolder(binding.root) {
+
+
+        fun bind(foodEntity: FoodEntity, deleteSchedules: deleteSchedule){
+
+            binding.apply {
+                country.text = foodEntity.text
+                var context: Context = binding.root.context
+
+                binding.root.setOnClickListener {
+
+                    val builder = AlertDialog.Builder(context)
+                    builder.setTitle("Delete Schedule")
+                    builder.setMessage("Do you want to delete?")
+
+                    builder.setPositiveButton("Delete") { dialog, which ->
+
+                        if (deleteSchedules!= null) {
+                            deleteSchedules!!.deleteSchedules(foodEntity)
+
+                            Toast.makeText(
+                                context,
+                                "Schedule deleted", Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+
+
+                    builder.setNegativeButton("Cancel") { dialog, which ->
+                    }
+
+
+                    builder.show()
+
+
+
+
+                }
+
+            }
+
+
+
+
+        }
+    }
 
 
     val diffUtil = object : DiffUtil.ItemCallback<FoodEntity>(){
@@ -46,7 +97,7 @@ class DiaryScheduleAdapter: RecyclerView.Adapter<DiaryScheduleAdapter.Schedule>(
         }
 
         override fun areContentsTheSame(oldItem: FoodEntity, newItem: FoodEntity): Boolean {
-            TODO("Not yet implemented")
+            return  oldItem == newItem
         }
 
 
@@ -54,4 +105,10 @@ class DiaryScheduleAdapter: RecyclerView.Adapter<DiaryScheduleAdapter.Schedule>(
 
 
     val differ = AsyncListDiffer (this, diffUtil)
+
+
+
+
 }
+
+

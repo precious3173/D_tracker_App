@@ -1,10 +1,8 @@
 package UserInterface
 
 import Adapter.DiaryScheduleAdapter
-import Database.FoodEntity
-import Model.CountryModel
-import Model.FoodEntityModel
-import Model.FoodModel
+import com.example.dtrackerapp.Application.Database.FoodEntity
+import com.example.dtrackerapp.Application.Model.FoodEntityModel
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -19,8 +17,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class MealsTracker : Fragment() {
+class MealsTracker : Fragment(), DiaryScheduleAdapter.deleteSchedule {
 
+    val diaryScheduleAdapter = DiaryScheduleAdapter(this)
     lateinit var binding: FragmentMealsTrackerBinding
    private val foodModel: FoodEntityModel by viewModels()
 
@@ -38,11 +37,14 @@ class MealsTracker : Fragment() {
         return binding.root
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
-        val foodEntity: MutableList<FoodEntity> = mutableListOf()
+            //   val foodEntity: MutableList<FoodEntity> = mutableListOf()
+
+
 
        binding.edit.setOnClickListener {
 
@@ -54,7 +56,7 @@ class MealsTracker : Fragment() {
 
             foodModel.getFood().collect{
 
-                val diaryScheduleAdapter = DiaryScheduleAdapter()
+
                 diaryScheduleAdapter.differ.submitList(it)
 
                 binding.recyclerview.apply {
@@ -67,5 +69,10 @@ class MealsTracker : Fragment() {
         }
 
 
+
+    }
+
+    override fun deleteSchedules(foodEntity: FoodEntity) {
+        foodModel.deleteFood(foodEntity)
     }
 }

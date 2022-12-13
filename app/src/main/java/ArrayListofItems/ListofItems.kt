@@ -1,7 +1,7 @@
 package ArrayListofItems
 
-import Model.CountryModel
-import Model.FoodModel
+import com.example.dtrackerapp.Application.Model.CountryModel
+import com.example.dtrackerapp.Application.Model.FoodModel
 import com.example.dtrackerapp.R
 
 class ListofItems {
