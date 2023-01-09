@@ -56,6 +56,9 @@
         <action
             android:id="@+id/action_mealsTracker_to_dietSchedule"
             app:destination="@id/dietSchedule" />
+        <action
+            android:id="@+id/action_mealsTracker_to_updateDietSchedule"
+            app:destination="@id/updateDietSchedule" />
     </fragment>
     <fragment
         android:id="@+id/dietSchedule"
@@ -64,6 +67,18 @@
         tools:layout="@layout/fragment_diet_schedule" >
         <action
             android:id="@+id/action_dietSchedule_to_mealsTracker"
+            app:destination="@id/mealsTracker" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateDietSchedule"
+        android:name="UserInterface.UpdateDietSchedule"
+        android:label="fragment_update_diet_schedule"
+        tools:layout="@layout/fragment_update_diet_schedule" >
+        <argument
+            android:name="schedule"
+            app:argType="com.example.dtrackerapp.Application.Database.FoodEntity" />
+        <action
+            android:id="@+id/action_updateDietSchedule_to_mealsTracker"
             app:destination="@id/mealsTracker" />
     </fragment>
 </navigation>

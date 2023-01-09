@@ -1,12 +1,14 @@
 package Adapter
 
 import UserInterface.DeleteDialog
+import UserInterface.MealsTrackerDirections
 import android.app.AlertDialog
 import android.content.Context
 import com.example.dtrackerapp.Application.Database.FoodEntity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +22,7 @@ class DiaryScheduleAdapter(delete: deleteSchedule): RecyclerView.Adapter<DiarySc
 
         fun deleteSchedules(foodEntity: FoodEntity)
     }
+
         var delete: deleteSchedule? = null
         init {
 
@@ -48,11 +51,19 @@ class DiaryScheduleAdapter(delete: deleteSchedule): RecyclerView.Adapter<DiarySc
 
         fun bind(foodEntity: FoodEntity, deleteSchedules: deleteSchedule){
 
+
+            binding.root.setOnClickListener {
+
+                val action = MealsTrackerDirections.actionMealsTrackerToUpdateDietSchedule(foodEntity)
+
+                Navigation.findNavController(it).navigate(action)
+            }
+
             binding.apply {
                 country.text = foodEntity.text
                 var context: Context = binding.root.context
 
-                binding.root.setOnClickListener {
+                binding.root.setOnLongClickListener {
 
                     val builder = AlertDialog.Builder(context)
                     builder.setTitle("Delete Schedule")
@@ -79,8 +90,10 @@ class DiaryScheduleAdapter(delete: deleteSchedule): RecyclerView.Adapter<DiarySc
 
 
 
-
+                   true
                 }
+
+
 
             }
 

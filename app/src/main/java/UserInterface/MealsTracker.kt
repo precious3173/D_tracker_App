@@ -42,9 +42,6 @@ class MealsTracker : Fragment(), DiaryScheduleAdapter.deleteSchedule {
         super.onViewCreated(view, savedInstanceState)
 
 
-            //   val foodEntity: MutableList<FoodEntity> = mutableListOf()
-
-
 
        binding.edit.setOnClickListener {
 
